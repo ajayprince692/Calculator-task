@@ -9,12 +9,12 @@ function createButton(value, clickHandler) {
   return btn;
 }
 
-//! Concatanating new value to existing display value.
+//! Concatenating new value to existing display value.
 
 function appendDisplay(value) {
   displayValue += value;
 
-  //! set new value as updated display value
+  //! set new value as the updated display value
   document.getElementById("display").value = displayValue;
 }
 
@@ -26,14 +26,14 @@ function clearDisplay() {
 //! To calculate
 
 function calculate() {
-  
-    //! setting value to the input field
+  //! setting value to the input field
+  let displayField = document.getElementById("display");
 
   try {
     displayValue = eval(displayValue).toString();
-    document.getElementById("display").value = displayValue;
+    displayField.value = displayValue;
   } catch {
-    document.getElementById("display").value = "error";
+    displayField.value = "error";
   }
 }
 
@@ -42,8 +42,8 @@ function calculate() {
 let buttons = [
   ["clear", clearDisplay],
   [".", () => appendDisplay(".")],
-  ["x", () => appendDisplay("*")],
-  ["/", () => appendDisplay("/")],
+  ["0", () => appendDisplay("0")],
+  ["00", () => appendDisplay("00")],
   ["6", () => appendDisplay("6")],
   ["7", () => appendDisplay("7")],
   ["8", () => appendDisplay("8")],
@@ -53,13 +53,14 @@ let buttons = [
   ["4", () => appendDisplay("4")],
   ["5", () => appendDisplay("5")],
   ["1", () => appendDisplay("1")],
-  ["0", () => appendDisplay("0")],
-  ["00", () => appendDisplay("00")],
+  ["x", () => appendDisplay("*")],
+  ["/", () => appendDisplay("/")],
   ["-", () => appendDisplay("-")],
   ["+", () => appendDisplay("+")],
-
+  ["%", () => appendDisplay("%")],
   ["=", calculate],
 ];
+
 //! variable to store buttons created
 
 let buttonsContainer = document.getElementById("buttons");
@@ -68,5 +69,3 @@ buttons.forEach(([value, clickHandler]) => {
   let button = createButton(value, clickHandler);
   buttonsContainer.appendChild(button);
 });
-
-let;
