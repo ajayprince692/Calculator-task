@@ -52,13 +52,15 @@ let buttons = [
   ["3", () => appendDisplay("3")],
   ["4", () => appendDisplay("4")],
   ["5", () => appendDisplay("5")],
-  ["1", () => appendDisplay("1")],
+  ["-", () => appendDisplay("-")],
   ["x", () => appendDisplay("*")],
   ["/", () => appendDisplay("/")],
-  ["-", () => appendDisplay("-")],
+  ["1", () => appendDisplay("1")],
   ["+", () => appendDisplay("+")],
   ["%", () => appendDisplay("%")],
   ["=", calculate],
+  ["(",()=>appendDisplay("(")],
+  [")",()=>appendDisplay(")")]
 ];
 
 //! variable to store buttons created
